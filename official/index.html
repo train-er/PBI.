@@ -59,10 +59,10 @@ p{margin:0}
 .emblem{width:140px;height:auto;max-width:100%}
 .brand b{font-family:var(--f-latin);font-weight:600;font-size:1.15rem;letter-spacing:.08em}
 .brand small{font-family:var(--f-display);font-size:.7rem;color:var(--gold-soft);letter-spacing:.15em}
-.nav{display:flex;gap:22px;font-size:.85rem}
-.nav a{text-decoration:none;color:var(--band-muted)}
-.nav a:hover{color:var(--band-fg)}
-.nav .member{border-left:1px solid var(--band-line);padding-left:22px;color:var(--gold-soft)}
+.nav{display:flex;align-items:center;gap:8px;font-size:.9rem;font-weight:700}
+.nav a{text-decoration:none;color:#fff;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.3);padding:10px 12px;border-radius:4px;white-space:nowrap;transition:background .2s}
+.nav a:hover,.nav a:focus-visible{background:rgba(184,147,74,.3);border-color:var(--gold-soft)}
+.nav .member{margin-left:8px;color:var(--gold-soft);border-color:var(--band-line);background:transparent;font-size:.8rem}
 .member-link{color:var(--gold-soft);text-decoration:none}
 .member-link:hover{text-decoration:underline}
 .btn{display:inline-flex;align-items:center;gap:8px;text-decoration:none;font-weight:700;font-size:.92rem;letter-spacing:.06em;
@@ -72,18 +72,19 @@ p{margin:0}
 .btn.ghost:hover{background:rgba(184,147,74,.12)}
 .btn.sm{padding:8px 14px;font-size:.8rem}
 .menu-btn{display:none}
-@media (max-width:860px){
+@media (max-width:1150px){
   .top .wrap{flex-wrap:wrap}
-  .menu-btn{display:flex;flex-direction:column;justify-content:center;gap:5px;width:40px;height:40px;order:2;background:none;border:1px solid var(--band-line);border-radius:2px;cursor:pointer;padding:0 10px}
+  .menu-btn{display:flex;position:relative;flex-direction:column;justify-content:center;gap:5px;width:76px;height:56px;order:2;background:rgba(255,255,255,.1);border:1px solid var(--gold-soft);border-radius:4px;cursor:pointer;padding:0 24px 16px;color:#fff}
+  .menu-btn::after{content:'メニュー';position:absolute;bottom:4px;left:0;width:100%;font:700 10px var(--f-body)}
   .menu-btn span{display:block;height:1.5px;background:var(--band-fg);transition:transform .25s,opacity .2s}
   .menu-btn[aria-expanded="true"] span:nth-child(1){transform:translateY(6.5px) rotate(45deg)}
   .menu-btn[aria-expanded="true"] span:nth-child(2){opacity:0}
   .menu-btn[aria-expanded="true"] span:nth-child(3){transform:translateY(-6.5px) rotate(-45deg)}
   .top .btn.sm{margin-left:auto}
-  .nav{display:none;order:3;flex-basis:100%;flex-direction:column;gap:0;padding-block:4px 10px;font-size:.95rem}
+  .nav{display:none;order:3;flex-basis:100%;flex-direction:column;align-items:stretch;gap:8px;padding-block:4px 10px;font-size:.95rem;max-height:65vh;overflow-y:auto}
   .nav.open{display:flex}
-  .nav a{padding:14px 2px;border-top:1px solid var(--band-line)}
-  .nav .member{border-left:0;padding-left:2px}
+  .nav a{padding:14px 16px}
+  .nav .member{margin:6px 0 0;padding:14px 16px}
 }
 @media (max-width:420px){.brand img{height:36px}.top .btn.sm{padding:8px 10px}}
 
@@ -406,7 +407,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
           <span class="lbl">NEXT SESSION</span>
           <span class="what">2027年2月　東京・福岡で開催予定</span>
           <p>日程・会場の詳細と説明会のご案内は、公式LINEでお知らせしています。まずはお気軽にご相談ください</p>
-          <a class="btn" href="https://train-er.github.io/PBI./" style="margin-top:18px">開催別LP・募集案内を見る →</a>
+          <a class="btn" href="https://train-er.github.io/PBI./" style="margin-top:18px">2月開催の詳細を見る →</a>
         </div>
         <!-- ▲ ここまで -->
       </div>

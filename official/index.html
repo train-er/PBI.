@@ -128,6 +128,23 @@ p{margin:0}
   border-left:1px solid var(--band-line);padding-left:22px;align-self:stretch}
 @media (max-width:700px){.hero .wrap{grid-template-columns:1fr;gap:32px}.hero{padding-block:40px}.hero-visual{width:min(100%,420px);justify-self:center}.hero h1{font-size:clamp(1.65rem,5.8vw,2.5rem)}}
 
+/* Hero photograph as a full-width background */
+.hero{padding-block:0;isolation:isolate}
+.hero .wrap{position:static;display:flex;align-items:center;min-height:700px;padding-block:72px}
+.hero-text{position:relative;z-index:2;width:58%;padding-left:28px}
+.hero-visual{position:absolute;inset:0;margin:0;padding:0;width:100%;height:100%;z-index:-1;pointer-events:none}
+.hero-visual img{width:100%;height:100%;object-fit:contain;object-position:right center;mask-image:none}
+.hero::after{content:'';position:absolute;inset:0;z-index:-1;pointer-events:none;background:linear-gradient(90deg,#fff 0%,#fff 35%,rgba(255,255,255,.96) 44%,rgba(255,255,255,.55) 58%,rgba(255,255,255,0) 75%)}
+.hero-visual .motto{right:20px;top:36px;bottom:auto;border:0;padding:0;color:#87692F}
+@media(min-width:1600px){.hero-visual img{object-position:calc(50% + 340px) center}}
+@media(max-width:700px){
+  .hero .wrap{min-height:760px;align-items:flex-start;padding-block:40px 360px}
+  .hero-text{width:100%;padding-left:12px;gap:20px}
+  .hero-visual img{object-fit:contain;object-position:right bottom}
+  .hero::after{background:linear-gradient(180deg,#fff 0%,#fff 34%,rgba(255,255,255,.94) 45%,rgba(255,255,255,.45) 62%,transparent 80%)}
+  .hero-visual .motto{top:auto;bottom:30px;right:16px;font-size:1rem}
+}
+
 /* philosophy */
 .quote{font-family:var(--f-display);font-size:clamp(1.35rem,3vw,1.9rem);line-height:1.8;max-width:24em}
 .quote::before{content:"";display:block;width:40px;height:1px;background:var(--gold);margin-bottom:28px}
